@@ -2,8 +2,10 @@ function autoEval(){
     iframe=document.getElementById("iframeautoheight");
     itable=iframe.contentWindow.document.getElementById("trPjs");
     irows=itable.getElementsByTagName("select");
-    irows[0].value="4(良好)";
-    for(i=1;i<8;i++){
-        irows[i].value="5(优秀)";
+    for(i=1;i<irows.length;i++){
+        if(i%8==0)
+            irows[i].value=irows.options[2].value;
+        else
+            irows[i].value=irows.options[1].value;
     }   
 }
